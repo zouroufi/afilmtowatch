@@ -14,9 +14,15 @@
                 String color = "#000";
                 String val;
                 ArrayList pList;
-                //if (request.getAttribute("piList") != null) {
+                System.out.println(request.getAttribute("piList"));
+                
+                
                     ArrayList al = (ArrayList) request.getAttribute("piList");
                     System.out.println(al);
+                    if (al.isEmpty()) {
+                        //System.out.println("ok");
+                        response.sendRedirect("error.html");
+                    }
                     Iterator itr = al.iterator();
                     
                         count++;
